@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>One Year — A Letter</title>
+  <meta name="description" content="A short, heartfelt one-year letter — open to read." />
+
+  <style>
+    :root{
+      --bg: #fde6ec;
+      --fg: #5a1f2b;
+      --card-bg: rgba(255,255,255,0.6);
+      --radius: 12px;
+      --max-width: 750px;
+    }
+
+    html,body{
+      height:100%;
+      margin:0;
+    }
+
+    body {
+      font-family: "Georgia", "Times New Roman", serif;
+      background-color: var(--bg);
+      color: var(--fg);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:100vh;
+      padding:20px;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    .container {
+      width:100%;
+      max-width:var(--max-width);
+      text-align:center;
+      background: linear-gradient(180deg, var(--card-bg), rgba(255,255,255,0.55));
+      padding:28px;
+      border-radius:var(--radius);
+      box-shadow: 0 8px 30px rgba(90,31,43,0.08);
+    }
+
+    h1 {
+      font-size: clamp(1.6rem, 1.8vw + 1rem, 2.2rem);
+      margin:0 0 18px 0;
+      font-weight:400;
+    }
+
+    .actions {
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      margin-bottom:18px;
+    }
+
+    button {
+      background: transparent;
+      border: 1.5px solid var(--fg);
+      color: var(--fg);
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 200ms ease;
+    }
+
+    button:focus {
+      outline: 3px solid rgba(90,31,43,0.14);
+      outline-offset: 3px;
+    }
+
+    button:hover {
+      background-color: var(--fg);
+      color: var(--bg);
+    }
+
+    /* Letter region */
+    .letter {
+      margin-top: 18px;
+      text-align:left;
+      font-size: 1.05rem;
+      line-height: 1.85;
+      padding: 18px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.35);
+      color: inherit;
+      box-shadow: 0 6px 18px rgba(90,31,43,0.05);
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transform: translateY(6px);
+      transition:
+        max-height 420ms cubic-bezier(.2,.9,.2,1),
+        opacity 320ms ease,
+        transform 320ms ease;
+      will-change: max-height, opacity, transform;
+    }
+
+    .letter.is-open {
+      opacity: 1;
+      transform: translateY(0);
+      max-height: 2000px; /* large enough for content */
+    }
+
+    .letter p {
+      margin: 0 0 14px 0;
+      hyphens: auto;
+    }
+
+    .signature {
+      margin-top: 22px;
+      font-style: italic;
+    }
+
+    /* Subtle reduced-motion preference */
+    @media (prefers-reduced-motion: reduce) {
+      .letter,
+      button {
+        transition: none !important;
+      }
+    }
+
+    /* Print */
+    @media print {
+      body, .container {
+        box-shadow:none;
+        background: white;
+      }
+      button { display:none !important; }
+      .letter { max-height: none !important; opacity:1 !important; transform:none !important; }
+    }
+
+    /* Small screens */
+    @media (max-width:480px){
+      .container { padding:18px; }
+      .letter { font-size:1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container" role="main">
+    <h1 id="page-title">One year.</h1>
+
+    <div class="actions" aria-hidden="false">
+      <button id="toggle-letter"
+              aria-controls="letter"
+              aria-expanded="false"
+              type="button">
+        Open the letter
+      </button>
+      <button id="print-btn" type="button" title="Print this letter">Print</button>
+    </div>
+
+    <article id="letter" class="letter" role="region" aria-labelledby="page-title" hidden>
+      <p>Not the loud kind of year people post about.<br>
+      Not a fairytale kella good days.<br>
+      Bas sene ha2i2iye.<br>
+      And that’s why it matters.</p>
+
+      <p>You met me in a season where I was trying to hold myself together quietly.<br>
+      Studying, doubting, pushing, falling, getting up—<br>
+      sometimes all in the same day.</p>
+
+      <p>You didn’t fix my life.<br>
+      You didn’t pretend things were easy.<br>
+      You just showed up.</p>
+
+      <p>W enta mawjud halae bl fatra li ana taabene mn eno kun strong.<br>
+      When I am anxious about the future.<br>
+      When concours feels heavier than it should,</p>
+
+      <p>You believe in me on days I couldn’t borrow belief from myself.<br>
+      You remind me—sometimes gently, sometimes stubbornly—<br>
+      that I’m more than my bad days,<br>
+      and more than my fears.</p>
+
+      <p>Loving you this year taught me something quiet but powerful:<br>
+      that support doesn’t always look like big words or perfect timing.<br>
+      Sometimes it’s just being there.<br>
+      Listening.<br>
+      Letting me unravel without making me feel small for it.</p>
+
+      <p>I know I wasn’t always easy to love.<br>
+      I know I was anxious, sensitive, scared of losing balance.<br>
+      But you held space for all of that<br>
+      and never made me feel like my struggles made me less worthy.</p>
+
+      <p>This year wasn’t about perfection.<br>
+      It was about choosing each other while growing,<br>
+      even when growth was uncomfortable.</p>
+
+      <p>So thank you—for the patience,<br>
+      for the reassurance,<br>
+      for standing next to me when life felt heavier than love should.</p>
+
+      <p>If this year taught me anything,<br>
+      it’s that love doesn’t save us from hard times—<br>
+      it walks with us through them.</p>
+
+      <p>And I’m grateful that this year,<br>
+      I didn’t walk alone.</p>
+
+      <div class="signature" aria-hidden="false">
+        Always,<br>
+        Dima
+      </div>
+    </article>
+  </div>
+
+  <script>
+    (function(){
+      const btn = document.getElementById('toggle-letter');
+      const letter = document.getElementById('letter');
+      const printBtn = document.getElementById('print-btn');
+
+      function openLetter() {
+        letter.hidden = false;
+        // small delay so transition can take effect when removing hidden
+        requestAnimationFrame(() => {
+          letter.classList.add('is-open');
+        });
+        btn.textContent = 'Close the letter';
+        btn.setAttribute('aria-expanded', 'true');
+        // move focus to start of letter for screen reader users
+        const firstPara = letter.querySelector('p');
+        if (firstPara) firstPara.tabIndex = -1, firstPara.focus();
+      }
+
+      function closeLetter() {
+        letter.classList.remove('is-open');
+        btn.textContent = 'Open the letter';
+        btn.setAttribute('aria-expanded', 'false');
+        // wait for transition to finish before hiding to avoid content jump
+        const onTransitionEnd = () => {
+          letter.hidden = true;
+          letter.removeEventListener('transitionend', onTransitionEnd);
+        };
+        letter.addEventListener('transitionend', onTransitionEnd);
+        btn.focus();
+      }
+
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        if (!expanded) openLetter(); else closeLetter();
+      });
+
+      // keyboard: toggle on Enter/Space is already handled by button element
+      // print button
+      printBtn.addEventListener('click', function(){ window.print(); });
+
+      // Close letter on Escape
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') {
+          closeLetter();
+        }
+      });
+
+      // If user prefers reduced motion, reveal the letter instantly when opening
+      const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduceMotion) {
+        // make transitions instant by removing class transitions in CSS (handled with media query)
+      }
+    })();
+  </script>
+</body>
+</html>
